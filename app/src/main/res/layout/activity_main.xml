@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:orientation="vertical"
+    tools:context="com.example.android.metalplayer.MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/heavy"
+        style="@style/MetalCategories">
+        <ImageView
+            style="@style/MetalCategoriesImage"
+            android:src="@drawable/metallica"/>
+        <TextView
+            style="@style/MetalCategoriesText"
+            android:text="@string/heavy"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/metalcore"
+        style="@style/MetalCategories">
+        <ImageView
+            style="@style/MetalCategoriesImage"
+            android:src="@drawable/metalcore"/>
+        <TextView
+            style="@style/MetalCategoriesText"
+            android:text="@string/metalcore"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/swedish"
+        style="@style/MetalCategories">
+        <ImageView
+            style="@style/MetalCategoriesImage"
+            android:src="@drawable/swedish"/>
+        <TextView
+            style="@style/MetalCategoriesText"
+            android:text="@string/swedish"/>
+    </RelativeLayout>
+
+</LinearLayout>
