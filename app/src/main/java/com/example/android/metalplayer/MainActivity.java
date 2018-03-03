@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,36 +16,30 @@ public class MainActivity extends AppCompatActivity {
 
         // HEAVY METAK ONCLICKLISTENER
         RelativeLayout heavyRelativeLayout = (RelativeLayout) findViewById(R.id.heavy);
-        // Set a click listener on that View
-        heavyRelativeLayout.setOnClickListener(new View.OnClickListener() {
-            // The code in this method will be executed when  clicked on.
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, HeavyMetalActivity.class));
-            }
-        });
+        heavyRelativeLayout.setOnClickListener(this);
 
         // METALCORE ONCLICKLISTENER
         RelativeLayout metalcoreRelativeLayout = (RelativeLayout) findViewById(R.id.metalcore);
-        // Set a click listener on that View
-        metalcoreRelativeLayout.setOnClickListener(new View.OnClickListener() {
-            // The code in this method will be executed when  clicked on.
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, MetalcoreActivity.class));
-            }
-        });
+        metalcoreRelativeLayout.setOnClickListener(this);
 
         // SWEDISH ONCLICKLISTENER
         RelativeLayout swedishRelativeLayout = (RelativeLayout) findViewById(R.id.swedish);
-        // Set a click listener on that View
-        swedishRelativeLayout.setOnClickListener(new View.OnClickListener() {
-            // The code in this method will be executed when  clicked on.
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, SwedishActivity.class));
-            }
-        });
-
+        swedishRelativeLayout.setOnClickListener(this);
     }
+
+        public void onClick(View view){
+        switch(view.getId()) {
+            case R.id.heavy:
+                startActivity(new Intent(MainActivity.this, HeavyMetalActivity.class));
+                break;
+            case R.id.metalcore:
+                startActivity(new Intent(MainActivity.this, MetalcoreActivity.class));
+                break;
+            case R.id.swedish:
+                startActivity(new Intent(MainActivity.this, SwedishActivity.class));
+                break;
+        }
+    }
+
 }
+
